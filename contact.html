@@ -17,36 +17,56 @@
     <nav>
         <ul class="nav-bar">
             <li><a href="about.html">About</a></li>
-            <li><a href="singles.html" >Singles</a></li>
-            <li><a href="videos.html" >Videos</a></li>
+            <li><a href="singles.html">Singles</a></li>
+            <li><a href="videos.html">Videos</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
 
     <div class="page-content contact-section">
-        
         <div class="contact-container">
             <p class="submit-text">Please submit the form</p>
-
-            <form id="contact-form">
+            
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLScTEp54X2uLJI_AZ5gp2prIVAD0ow8ZQpfCU6rqTW-HbBxFVA/formResponse" method="POST">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required aria-label="Your Name">
-
+                <input type="text" name="entry.2033729169" required>
+                
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required aria-label="Your Email">
-
+                <input type="email" name="entry.1009656643" required>
+                
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required aria-label="Subject">
+                <input type="text" name="entry.481792928" required>
                 
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required aria-label="Your Message"></textarea>
-
-                <button id="submit-button" type="submit">Send Message</button>
+                <textarea name="entry.457313495" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
             </form>
+            
         </div>
-    </div>
+    </div> 
 
-    <script src="contact.js"></script> <!-- Link to JavaScript -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from redirecting to the Google Form
+        
+            // Show a confirmation message
+            alert('Your message has been sent! Thank you for contacting us.');
+        
+            // Create a new FormData object and submit it via XMLHttpRequest
+            var formData = new FormData(this);
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', this.action, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Optionally, you can do something after the form submission, e.g., show a custom success message
+                }
+            };
+            xhr.send(formData);
+        });
+        
+    </script>
 
     <footer>
         <div class="social-icons">
@@ -75,6 +95,7 @@
                   </svg>
             </a>
         </div>
-    </footer>
+    </footer>    
+    
 </body>
 </html>
