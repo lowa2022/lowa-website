@@ -1,0 +1,475 @@
+
+/* General Styles */
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Rosarivo", serif; /* Change to Rosarivo */
+    background-color: black;
+    color: #f1f1f1;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Landing Page */
+.landing {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#logo {
+    font-size: 8rem;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 15px;
+}
+
+/* About Section Image */
+.about-container img {
+    width: 100%; /* Ensures the image fills the container */
+    max-width: 300px; /* Set a smaller maximum width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers its container */
+    border-radius: 10px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+}
+
+
+#click-here {
+    font-size: 16px;;
+    color: white;
+    text-align: center;
+    animation: bounce 1.5s infinite;
+}
+
+/* Bouncing arrow animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+/* Navigation Bar */
+nav {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    gap: 15px; /* Adjust spacing between items */
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow issues */
+
+}
+
+.nav-bar li {
+    display: inline;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+.nav-bar a:hover {
+    color: #f1f1f1;
+}
+
+.nav-bar .active {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
+
+.nav-logo {
+    max-width: 150px; /* Set a max width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Homepage Content */
+.homepage-content {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2.5rem; /* Adjust size for bigger icons */
+}
+
+/* Main Container */
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 15px; /* Reduced gap between items */
+    padding: 50px 250px; /* Padding inside the container for breathing room */
+}
+
+/* Video Container */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.about-container {
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+
+}
+
+/* Album & Video Items */
+.album-item, .video-item {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.album-item {
+    background-color: transparent;
+    height: 320px;
+}
+
+.video-item {
+    background-color: white;
+    height: 380px;
+}
+
+.album-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Album & Video Cover */
+.album-cover {
+    border-radius: 10px;
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Song Name */
+.song-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Song Links */
+.song-links {
+    margin-top: auto;
+}
+
+.song-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.song-links a:hover {
+    color: #ffffff;
+}
+
+/* Page Container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+}
+
+/* Footer for the index.html page */
+#fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 10;
+}
+
+
+/* Media Queries */
+
+/* For medium screens (Tablets and below) */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .video-container {
+        grid-template-columns: repeat(2, 1fr); /* 3 items per row */
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .about-container{
+        gap: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* For small screens (Mobile) */
+@media (max-width: 768px) {
+    .main-container, .video-container, .contact-container , .about-container{
+        grid-template-columns: 1fr; /* One item per row */
+        gap: 10px;
+        padding: 0 10px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .video-item, .album-item {
+        width: 100%;
+        height: auto;
+    }
+
+    #logo {
+        font-size: 5rem;
+        letter-spacing: 5px;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+
+    .nav-logo {
+        max-width: 100px;
+    }
+
+    .nav-bar a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .nav-bar {
+        gap: 10px;
+    }
+
+    .responsive-video {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .responsive-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .about-container img {
+        max-width: 90%; /* Allow the image to take up 90% of the container width */
+    }
+}
+
+/* Hover Effects */
+nav a:hover, .song-links a:hover {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Video Container */
+.video-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Heading Styles */
+h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Contact Form */
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Label, Input, and Textarea styling */
+form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #f1f1f1;
+}
+
+/* Submit Button */
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-height: auto; /* Allow it to grow */
+    height: auto; /* Ensures no fixed height issues */
+    padding-bottom: 80px;
+}
+
+
+/* Submit Button */
+
+form button {
+    background-color: #f1f1f1;  /* Light gray background */
+    color: black;  /* Text color */
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+    position: sticky;
+    bottom: 10px;
+}
+
+form button:hover {
+    background-color: #444;  /* Darken on hover */
+    color: white;
+}
+
+form textarea {
+    max-height: 150px; /* Adjust as needed */
+    resize: vertical; /* Allow resizing up and down */
+}
+
+
+
+/* Centering the "Please submit the form" text */
+.submit-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 20px;
+}
+
+/* For making sure the button is not overlapping or hidden */
+form button {
+    z-index: 15; /* Ensure the button is above all other content */
+}
+
+.about-me .text-container {
+    width: 80%; /* You can adjust this value to your liking */
+    max-width: 800px; /* Max width for readability */
+    margin: 0 auto; /* Center the container */
+    line-height: 1.6; /* For better readability */
+}
